@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to Web Concepts - Girl Develop It</title>
+
+		<meta name="description" content="This is an intro to JavaScript course developed by Froilan Miranda. 
+
+    The course is meant to be taught in a single two-hour workshop.">
+		<meta name="author" content="Frolian Miranda">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/gdicool.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor--><link rel="stylesheet" href="lib/css/light.css">
+		<!-- dark editor<link rel="stylesheet" href="lib/css/dark.css">-->
+
+		<!-- If use the PDF print sheet so students can print slides-->
+
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Introduction to JavaScript</h3>
+                    <p>or</p>
+					<h4>Getting started with JavaScript?</h4>
+                    <img src="images/gdi_logo_badge.png" alt="" />
+				</section>
+                <section>
+                    <h2>Welcome!</h2>
+                    <h3>What to Expect</h2>
+                    <div class="left-align">
+                        <p>This class is presented in partnership between the Delaware Libraries and Zip Code Wilmington.</p>
+                        <p>This is a general overview of a broad subject, starting from the basics</p>
+                        <p>Should help you understand what you want to learn more about, and if programming could be a career path for you.</p>
+                        <p>I don't know everything, and neither will you.</p>
+                        <p>Have fun and ask questions</p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Who am I?</h2>
+                    <div class="left-align">
+                        <p>Graduate of<a href="http://www.zipcodewilmington.com/">Zip Code Wilmington</a>, a 12-week software engineering bootcamp based in Wilmington, DE</p>
+                        <p>Delaware <a href="http://www.meetup.com/Delaware-Java-Users-Group/"Java Users Group</a> co-organizer</p>
+                        <p>Started as a complete beginner, no college level programming education</p>
+                        <p>Connect with me <a href="https://twitter.com/deeclarkesays">@deeclarkesays</a></p>
+                    </div>
+                </section>
+                <section>
+                    <h2>What we'll cover</h2>
+                    <ul>
+                        <li>JavaScript Data Types
+                            <ul>
+                                <li>Numbers</li>
+                                <li>Strings</li>
+                                <li>Objects</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Variables
+                        </li>
+                        <li class="fragment">Operators
+                            <ul>
+                                <li>Addition, Subtraction, Multiplication, Division</li>
+                                <li>Boolean operators</li>
+                                <li>Modulus operator</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Functions
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                    <h2>Introduction</h2>
+                    <p> Because JavaScript is notorious for being 
+                    the world's most misunderstood programming language. While it is 
+                    often derided as a toy, beneath its deceptive simplicity lie some 
+                    powerful language features. JavaScript is now used by an incredible number of high-profile applications, showing that deeper knowledge of this technology is an important skill for any web or mobile developer.</p>
+                    </section>
+                    <section>
+                        <h2>JavaScript is..</h2>
+                        <ul>
+                            <li class="fragment">
+                                JavaScript is an object-oriented dynamic language with 
+                                types and operators, standard built-in objects, and methods.
+                            </li>
+                            <li class="fragment">Syntax is based on the Java and C languages — so many structures from those languages apply to JavaScript as well.<li>
+                            <li class="fragment">One main difference is that functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
+                            <li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Popularity</h2>
+                        <img src="images/github_languages.jpg" alt="Github Popularity" />
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>Numbers</h2>
+                    <p class="left-align"> Standard arithmetic operators are supported, including addition, subtraction, modulus (or remainder) arithmetic, etc. There's also a built-in object that we forgot to mention earlier called Math that provides advanced mathematical functions and constants</p>
+                    <pre>
+                        <code class="left-align">Math.sin(3.5); //-0.35078322768961984
+                        </code>
+                        <code>var r = 2;
+                        <br/>var circumference = Math.PI * (r + r); //12.566370614359172</code>
+                        </code>
+                    </pre>
+                    </section>
+                    <section>
+                        <p class="left-align">You can convert a string to an integer using the built-in parseInt() function. This takes the base for the conversion as an optional second</p>
+                        <pre>
+                            <code>parseInt("010", 10); // 10d argument, which you should always provide
+                            <br/>parseInt("123", 10); // 123
+                            </code>
+                        </pre>
+                         <p class="fragment left-align">If you don't provide the base, you can get surprising results in older browsers (pre-2013):</p>
+                        <pre class="fragment">
+                            <code>parseInt("010"); // 8</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <p class="fragment left-align">That happened because the parseInt() function decided to treat the string as octal due to the leading 0. If you want to convert a binary number to an integer, just change the base:</p>
+                        <pre class="fragment">
+                            <code>parseInt("11", 2); // 3</code>
+                        </pre>
+                        <p class="fragment left-align">// You can also use the unary + operator to convert values to numbers:</p>
+                        <pre class="fragment">
+                            <code>+ "42"; // 42</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <p class="left-align">A special value called NaN (short for "Not a Number") is returned if the string is non-numeric:</p>
+                        <pre class="fragment">
+                            <code>parseInt("hello", 10); // NaN</code>
+                        </pre>
+                        <p class="fragment left-align">NaN is toxic: if you provide it as an input to any mathematical operation the result will also be NaN:</p>
+                        <pre class="fragment">
+                            <code>NaN + 5; // NaN</code>
+                        </pre>
+                        <p class="fragment left-align">You can test for NaN using the built-in isNaN() function:</p>
+                        <pre class="fragment">
+                            <code>isNaN(NaN); // true</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <p class="left-align">JavaScript also has the special values Infinity and -Infinity:</p>
+                        <pre class="fragment">
+                            <code>1 / 0; //  Infinity
+                            <br/>-1 / 0; // -Infinity</code>
+                        </pre>
+                        <p class="fragment left-align">You can test for Infinity, -Infinity and NaN values using the built-in isFinite() function:</p>
+                        <pre class="fragment">
+                            <code>isFinite(1/0); // false
+                            <br/>isFinite(-Infinity); // false
+                            <br/>isFinite(NaN); // false</code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Strings</h2>
+                        <div class="left-align">
+                            <p class="">Strings in JavaScript are sequences of characters. More accurately, they are sequences of Unicode characters, with each character represented by a 16-bit number. This should be welcome news to anyone who has had to deal with internationalization.
+                                <br/>
+                                <br/>
+                                If you want to represent a single character, you just use a string of length 1.
+                                <br/>
+                                To find the length of a string, access its length property:
+                            </p>
+                            <pre class="fragment">
+                                <code>"hello".length; // 5</code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="left-align">
+                            <p class="">There's our first brush with JavaScript objects! Did we mention that you can use strings like objects too? They have methods as will that allow you to manipulate the string and access information about the string:</p>
+                            <pre class="fragment">
+                                <code>"hello".charAt(0); // "h"<br/>
+                                "hello, world".replace("hello", "goodbye"); // "goodbye, world" <br/>
+                                "hello".toUpperCase(); // "HELLO"</code>
+                            </pre>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h4>Other Types</h4>
+                        <div class="left-align">
+                            <p class="">JavaScript distinguishes between null, which is a value that indicates a deliberate non-value (and is only accessible through the null keyword), and undefined, which is a value of type undefined that indicates an uninitialized value — that is, a value hasn't even been assigned yet. We'll talk about variables later, but in JavaScript it is possible to declare a variable without assigning a value to it. If you do this, the variable's type is undefined. undefined is actually a constant.JavaScript has a boolean type, with possible values true and false (both of which are keywords.) Any value can be converted to a boolean according to the following rules: <p/>
+                            <p class="fragment">false, 0, empty strings (""), NaN, null, and undefined all become false.All other values become true.<p/>
+                            <p class="fragment">You can perform this conversion explicitly using the Boolean() function:</p>
+                            <pre class="fragment">
+                                <code>Boolean("");  // false
+                                <br/>
+                                Boolean(234); // true</code>
+                            </pre>
+                            <p class="fragment">However, this is rarely necessary, as JavaScript will silently perform this conversion when it expects a boolean, such as in an if statement (see below.) For this reason, we sometimes speak simply of "true values" and "false values," meaning values that become true and false, respectively, when converted to booleans. Alternatively, such values can be called "truthy" and "falsy", respectively.</p>
+                            <p>Boolean operations such as &mp;&amp; (logical and), || (logical or), and ! (logical not) are supported;</p>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Variables</h2>
+                        <div class="left-align">
+                            <p>New variables in JavaScript are declared using the var keyword:</p>
+                            <pre class="fragment">
+                                <code>var a;
+                                <br/>var name = "simon";</code>
+                            </pre>
+                            <p>If you declare a variable without assigning any value to it, its type is undefined.</p>
+                            <p>An important difference between JavaScript and other languages like Java is that in JavaScript, blocks do not have scope; only functions have scope. So if a variable is defined using var in a compound statement (for example inside an if control structure), it will be visible to the entire function. However, starting with ECMAScript Edition 6, let and const declarations allow you to create block-scoped variables.</p>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Operators</h2>
+                        <p>JavaScript's numeric operators are +, -, *, / and % — which is the remainder operator (which is the same as modulo.) Values are assigned using =, and there are also compound assignment statements such as += and -=. These extend out to x = x operator y.</p>
+                        <pre class="fragment">
+                            <code>
+                            x += 5<br/>
+                            x = x + 5
+                            </code>
+                        </pre>
+                        <p class="fragment">You can use ++ and -- to increment and decrement respectively. These can be used as prefix or postfix operators.</p>
+                        <p>The + operator also does string concatenation:</p>
+                        <pre class="fragment">
+                        <code>"hello" + " world"; // "hello world"</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <p>If you add a string to a number (or other value) everything is converted in to a string first. This might catch you up:</p>
+                        <pre class="fragment">
+                            <code>"3" + 4 + 5;  // "345"</br>3 + 4 + "5"; // "75"
+                        </pre>
+                        <p class="fragment">Adding an empty string to something is a useful way of converting it to a string itself.</p>
+
+                        <p class="fragment">Comparisons in JavaScript can be made using <, >, <= and >=. These work for both strings and numbers. Equality is a little less straightforward. The double-equals operator performs type coercion if you give it different types, with sometimes interesting results:
+                        <pre class="fragment">
+                        <code>123 == "123"; // true<br/>1 == true; // true</code>
+                    </section>
+                    <section>
+                        <p>To avoid type coercion and make sure your comparisons are always accurate, you should always use the triple-equals operator:</p>
+                        <pre>
+                            <code>123 === "123"; // false<br/>1 === true;    // false</code>
+                        </pre>
+                        <p>There are also != and !== operators.</p>
+                        <p>JavaScript also has bitwise operations. If you want to use them, they're there</p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Java != JavaScript</h2>
+                    <div style="width: 48%; margin-right: 2%; float: left; text-align: left;">
+                        <p>Java:</p>
+                        <ul class="fragment">
+                            <li>Server-side</li>
+                            <li>Object-oriented</li>
+                            <li>Requires special parser (JVM)</li>
+                            <li>By Sun Microsystems</li>
+                        </ul>
+                    </div>
+                    <div style="width: 50%; float: left; text-align: left;">
+                        <p>JavaScript:</p>
+                        <ul class="fragment">
+                            <li>Primarily client-side</li>
+                            <li>Primarily written procedurally</li>
+                            <li>Parsed by any browser</li>
+                            <li>By Netscape</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>Let's take a look</h3>
+                        <div class="center-align">
+                            <p><a href="http://www.huffingtonpost.com/entry/blue-ivy-beyonce-dancing-video_55fc21bbe4b08820d9184758">Huffington Post</a></p>
+                        </div>
+                </section>   
+                
+<!-- Stretch break!! -->
+
+                <section>
+                    <h2>Building a web site</h2>
+                </section>
+                
+                <section>
+                    <h3>Considerations before building</h3>
+                    <ul>
+                        <li class="fragment">What is the purpose of the site?</li>
+                        <li class="fragment">Hosting and a domain name
+                            <ul class="fragment">
+                                <li>Domain name registration should not cost more than $15/yr</li>
+                                <li>Hosting should not cost more than $50/yr</li>
+                                <li>Hosting choices may depend on supported server-side tech</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Whether to build it yourself or hire someone</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    //MAYBE
+                    <section>
+                        <h3>User Experience &amp; Information Architecture</h3>
+                        <p>A user-friendly, well-architected site will:</p>
+                        <ul>
+                            <li class="fragment">Deepen engagement</li>
+                            <li class="fragment">Increase conversion</li>
+                            <li class="fragment">Raise satisfaction</li>
+                            <li class="fragment">Bring users back</li>
+                        </ul>
+                    </section>
+                    
+                    //MAYBE
+                    <section>
+                        <h3>Sitemaps &amp; decision trees</h3>
+                        <div style="width: 48%; margin-right: 2%; float: left; text-align: left;">
+                            <img src="images/sitemap.gif" alt="" />
+                        </div>
+                        <div style="width: 50%; float: left; text-align: left;">
+                            <img src="images/Imaging.jpg" alt="" />
+                        </div>
+                        <aside class="notes">
+                            <ul>
+                                <li>Both important to UX/IA</li>
+                                <li>Sitemaps show the organization of pages and assets for a site</li>
+                                <li>Decision trees help predict how the user will move through the site or utilize interactive tools/forms</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>What languages to use</h3>
+                        <p class="fragment">That depends...</p>
+                        <ul>
+                            <li class="fragment">HTML and CSS will almost certainly be used</li>
+                            <li class="fragment">JavaScript may be used for interactivity</li>
+                            <li class="fragment">Server-side languages will likely be used for any data storage or retrieval</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Server-side languages: What are the differences?</h3>
+                        <ul>
+                            <li>The main difference is syntax</li>
+                                <ul>
+                                    <li>the set of rules that define the combinations of symbols that are considered to be correctly structured programs in that language</li>
+                                </ul>
+                            <li class="fragment">They have slightly different strengths and philosophies</li>
+                            <li class="fragment">Which you choose to use will depend on
+                                <ul>
+                                    <li>What you are familiar with or want to learn</li>
+                                    <li>What your host supports</li>
+                                    <li>Community and documentation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Hello world</h3>
+                        <p>PHP</p>
+                        <pre>
+                            <code>
+    echo "Hello, world!";
+                            </code>
+                        </pre>
+                        <p>Java</p>
+                        <pre>
+                            <code>
+    class HelloWorld {
+      static public void main( String args[] ) {
+        System.out.println( "Hello World!" );
+      }
+    }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Hello world</h3>
+                        <p>Python</p>
+                        <pre>
+                            <code>
+    'Hello, world!'
+                            </code>
+                        </pre>
+                        <p>Ruby</p>
+                        <pre>
+                            <code>
+    puts 'Hello, world!'
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Hello world</h3>
+                        <p>JavaScript</p>
+                        <p><small>Not server-side, but just for example</small></p>
+                        <pre>
+                            <code>
+    document.writeln('Hello, World!');
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h3>Tools of the trade</h3>
+                    <p class="left-align">To build your web site, you will probably need:</p>
+                    <ul>
+                        <li class="fragment">A simple text editor or code editor such as SublimeText, Notepad, or TextWrangler to write your code. Many can be found for free.</li>
+                        <li class="fragment">A web browser such as Chrome, Firefox, or Safari to test your code. All popular modern browsers are free.</li>
+                        <li class="fragment">Chrome is recommended for their developer tools</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>Tools of the trade</h3>
+                    <p class="left-align">You will also need:</p>
+                    <ul>
+                        <li class="fragment">An FTP (file transfer protocol) client such as WinSCP, Cyberduck, or CoffeeCup FTP to get files from your computer to the server. Many are free.</li>
+                        <li class="fragment">Optionally, an image editor such as IrfanView, Gimp, or Photoshop to edit images which will be used on the web site. Some are available for free.</li>
+                    </ul>
+                  </section>
+                    <section>
+                       <h3>OR...</h3>
+                       <div class="left-align">
+                            <p class="fragment">Use a <strong>CMS</strong>: Stands for content management system. A program that allows publishing, editing, and modifying content as well as maintenance from a central interface, sometimes WYSIWIG.</p>
+                        </div>
+                        <ul class="fragment">
+                            <li>Wordpress</li>
+                            <li>Squarespace</li>
+                            <li>Wix</li>
+                            <li>The Grid</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>WYSIWYG vs. hand-coding</h3>
+                        <ul>
+                            <li>WYSIWYG code editors make general assumptions about what you intended to write which often is not accurate or best</li>
+                            <li class="fragment">They make the job of professionals <em>much</em> more difficult when the code is written poorly and filled with junk</li>
+                            <li class="fragment">To truly understand what you are building, you need to learn the fundamental components</li>
+                            <li class="fragment">Once you know how to code by hand, there are no limits to what you can build!</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Web standards</h2>
+                        <p class="left-align">In general, this means a site should:</p>
+                        <ul>
+                            <li class="fragment">Have valid HTML, CSS, and JavaScript</li>
+                            <li class="fragment">Meet accessibility standards</li>
+                            <li class="fragment">Meet semantic guidelines</li>
+                            <li class="fragment">Have valid meta data</li>
+                            <li class="fragment">Have proper character encoding</li>
+                        </ul>
+                </section>
+                </section>
+
+                <section>
+                    <h2>Web development professionals</h2>
+                </section>
+
+                <section>
+                    <h3>Meet the web team</h3>
+                    <ul>
+                        <li class="fragment">Front end
+                            <ul>
+                                <li>User Experience Designer</li>
+                                <li>Graphic Designer</li>
+                                <li>Web Developer</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Back end
+                            <ul>
+                                <li>Server Admin</li>
+                                <li>Database Admin</li>
+                                <li>Software Engineer</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Overall
+                            <ul>
+                                <li>QA Engineer</li>
+                                <li>Project Manager</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>How to hire a developer</h3>
+                    <p class="left-align">Remember the three Rs:</p>
+                    <ul>
+                        <li class="fragment"><strong>References</strong>: Talk to people who have worked with the developer before. Were they prompt? Pleasant? Forthright?</li>
+                        <li class="fragment"><strong>Requirements</strong>: Can they do the work that needs to be done. Ask for samples of their prior work and ask exactly which parts of the process they were responsible for. Design? UX? DB architecture? QA?</li>
+                        <li class="fragment"><strong>Reality</strong>: If it sounds too good to be true, it probably is. This website will be a reflection of you, either personally or professionally. Hire someone you feel will be invested in a job well done.</li>
+                    </ul>
+                </section>
+                <section>
+                  <h2>Questions?</h2>
+                  <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
+                    <div class ="clear"></div></div>
+                </section>
+			</div>
+  		<footer>
+        <div class="copyright">
+          Intro to Web Concepts -- Girl Develop It --
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: false,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
