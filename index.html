@@ -100,76 +100,14 @@
                                 JavaScript is an object-oriented dynamic language with 
                                 types and operators, standard built-in objects, and methods.
                             </li>
-                            <li class="fragment">Syntax is based on the Java and C languages — so many structures from those languages apply to JavaScript as well.<li>
+                            <li class="fragment">Syntax is based on the Java and C languages — so many structures from those languages apply to JavaScript as well.</li>
                             <li class="fragment">One main difference is that functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
-                            <li>
+                            </li>
                         </ul>
                     </section>
                     <section>
                         <h2>Popularity</h2>
                         <img src="images/github_languages.jpg" alt="Github Popularity" />
-                    </section>
-                </section>
-                <section>
-                    <section>
-                    <h2>Numbers</h2>
-                    <p class="left-align"> Standard arithmetic operators are supported, including addition, subtraction, modulus (or remainder) arithmetic, etc. There's also a built-in object that we forgot to mention earlier called Math that provides advanced mathematical functions and constants</p>
-                    <pre>
-                        <code class="left-align">Math.sin(3.5); //-0.35078322768961984
-                        </code>
-                        <code>var r = 2;
-                        <br/>var circumference = Math.PI * (r + r); //12.566370614359172</code>
-                        </code>
-                    </pre>
-                    </section>
-                    <section>
-                        <p class="left-align">You can convert a string to an integer using the built-in parseInt() function. This takes the base for the conversion as an optional second</p>
-                        <pre>
-                            <code>parseInt("010", 10); // 10d argument, which you should always provide
-                            <br/>parseInt("123", 10); // 123
-                            </code>
-                        </pre>
-                         <p class="fragment left-align">If you don't provide the base, you can get surprising results in older browsers (pre-2013):</p>
-                        <pre class="fragment">
-                            <code>parseInt("010"); // 8</code>
-                        </pre>
-                    </section>
-                    <section>
-                        <p class="fragment left-align">That happened because the parseInt() function decided to treat the string as octal due to the leading 0. If you want to convert a binary number to an integer, just change the base:</p>
-                        <pre class="fragment">
-                            <code>parseInt("11", 2); // 3</code>
-                        </pre>
-                        <p class="fragment left-align">// You can also use the unary + operator to convert values to numbers:</p>
-                        <pre class="fragment">
-                            <code>+ "42"; // 42</code>
-                        </pre>
-                    </section>
-                    <section>
-                        <p class="left-align">A special value called NaN (short for "Not a Number") is returned if the string is non-numeric:</p>
-                        <pre class="fragment">
-                            <code>parseInt("hello", 10); // NaN</code>
-                        </pre>
-                        <p class="fragment left-align">NaN is toxic: if you provide it as an input to any mathematical operation the result will also be NaN:</p>
-                        <pre class="fragment">
-                            <code>NaN + 5; // NaN</code>
-                        </pre>
-                        <p class="fragment left-align">You can test for NaN using the built-in isNaN() function:</p>
-                        <pre class="fragment">
-                            <code>isNaN(NaN); // true</code>
-                        </pre>
-                    </section>
-                    <section>
-                        <p class="left-align">JavaScript also has the special values Infinity and -Infinity:</p>
-                        <pre class="fragment">
-                            <code>1 / 0; //  Infinity
-                            <br/>-1 / 0; // -Infinity</code>
-                        </pre>
-                        <p class="fragment left-align">You can test for Infinity, -Infinity and NaN values using the built-in isFinite() function:</p>
-                        <pre class="fragment">
-                            <code>isFinite(1/0); // false
-                            <br/>isFinite(-Infinity); // false
-                            <br/>isFinite(NaN); // false</code>
-                        </pre>
                     </section>
                 </section>
                 <section>
@@ -192,9 +130,7 @@
                         <div class="left-align">
                             <p class="">There's our first brush with JavaScript objects! Did we mention that you can use strings like objects too? They have methods as will that allow you to manipulate the string and access information about the string:</p>
                             <pre class="fragment">
-                                <code>"hello".charAt(0); // "h"<br/>
-                                "hello, world".replace("hello", "goodbye"); // "goodbye, world" <br/>
-                                "hello".toUpperCase(); // "HELLO"</code>
+                                <code>"hello".charAt(0); // "h"<br/>"hello, world".replace("hello", "goodbye"); // "goodbye, world"<br/>"hello".toUpperCase(); // "HELLO"</code>
                             </pre>
                         </div>
                     </section>
@@ -203,7 +139,9 @@
                     <section>
                         <h4>Other Types</h4>
                         <div class="left-align">
-                            <p class="">JavaScript distinguishes between null, which is a value that indicates a deliberate non-value (and is only accessible through the null keyword), and undefined, which is a value of type undefined that indicates an uninitialized value — that is, a value hasn't even been assigned yet. We'll talk about variables later, but in JavaScript it is possible to declare a variable without assigning a value to it. If you do this, the variable's type is undefined. undefined is actually a constant.JavaScript has a boolean type, with possible values true and false (both of which are keywords.) Any value can be converted to a boolean according to the following rules: <p/>
+                            <p class="">JavaScript distinguishes between null, which is a value that indicates a deliberate non-value (and is only accessible through the null keyword), and undefined, which is a value of type undefined that indicates an uninitialized value — that is, a value hasn't even been assigned yet. We'll talk about variables later, but in JavaScript it is possible to declare a variable without assigning a value to it.<br/>
+                            <br/>
+                            If you do this, the variable's type is undefined. undefined is actually a constant.JavaScript has a boolean type, with possible values true and false (both of which are keywords.) Any value can be converted to a boolean according to the following rules: <p/>
                             <p class="fragment">false, 0, empty strings (""), NaN, null, and undefined all become false.All other values become true.<p/>
                             <p class="fragment">You can perform this conversion explicitly using the Boolean() function:</p>
                             <pre class="fragment">
@@ -249,11 +187,11 @@
                     <section>
                         <p>If you add a string to a number (or other value) everything is converted in to a string first. This might catch you up:</p>
                         <pre class="fragment">
-                            <code>"3" + 4 + 5;  // "345"</br>3 + 4 + "5"; // "75"
+                            <code>"3" + 4 + 5;  // "345"</br>3 + 4 + "5"; // "75"</code>
                         </pre>
                         <p class="fragment">Adding an empty string to something is a useful way of converting it to a string itself.</p>
 
-                        <p class="fragment">Comparisons in JavaScript can be made using <, >, <= and >=. These work for both strings and numbers. Equality is a little less straightforward. The double-equals operator performs type coercion if you give it different types, with sometimes interesting results:
+                        <p class="fragment">Comparisons in JavaScript can be made using &#60;, >, &#60;= and >=. These work for both strings and numbers. Equality is a little less straightforward. The double-equals operator performs type coercion if you give it different types, with sometimes interesting results:
                         <pre class="fragment">
                         <code>123 == "123"; // true<br/>1 == true; // true</code>
                     </section>
@@ -266,34 +204,6 @@
                         <p>JavaScript also has bitwise operations. If you want to use them, they're there</p>
                     </section>
                 </section>
-                <section>
-                    <h2>Java != JavaScript</h2>
-                    <div style="width: 48%; margin-right: 2%; float: left; text-align: left;">
-                        <p>Java:</p>
-                        <ul class="fragment">
-                            <li>Server-side</li>
-                            <li>Object-oriented</li>
-                            <li>Requires special parser (JVM)</li>
-                            <li>By Sun Microsystems</li>
-                        </ul>
-                    </div>
-                    <div style="width: 50%; float: left; text-align: left;">
-                        <p>JavaScript:</p>
-                        <ul class="fragment">
-                            <li>Primarily client-side</li>
-                            <li>Primarily written procedurally</li>
-                            <li>Parsed by any browser</li>
-                            <li>By Netscape</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <h3>Let's take a look</h3>
-                        <div class="center-align">
-                            <p><a href="http://www.huffingtonpost.com/entry/blue-ivy-beyonce-dancing-video_55fc21bbe4b08820d9184758">Huffington Post</a></p>
-                        </div>
-                </section>   
-                
 <!-- Stretch break!! -->
 
                 <section>
