@@ -76,15 +76,15 @@
                                 <td>Introductions</td>
                             </tr>       
                             <tr>
-                                <td>11:15 - 12:45pm</td> 
+                                <td>11:15 - 1pm</td> 
                                 <td>Lecture</td>
                             </tr>
                             <tr>    
-                                <td>12:45 - 1pm</td>
+                                <td>1 - 1:10pm</td>
                                 <td>Break</td>
                             </tr>
                             <tr>          
-                                <td>1 - 2pm</td>
+                                <td>1:10 - 2pm</td>
                                 <td>Lab</td>
                             </tr>
                         </table>
@@ -119,7 +119,7 @@
                     <div align="center">
                         <br/>
                         <p>Dominique Clarke, <a href="http://www.zipcodewilmington.com/about-us/">Zip Code Wilmington</a> Community Engagement Manager</p><br/>
-                        <p>Teacher's Aids</p><br/>
+                        <p>Teacher's Aids, Current Students of ZCW</p><br/>
                         <p>YOU!</p>
                         
                     </div>
@@ -150,21 +150,16 @@
                 </section>
                 <section>
                     <section>
-                    <h2>Introduction</h2>
-                    <p> Because JavaScript is notorious for being 
-                    the world's most misunderstood programming language. While it is 
-                    often derided as a toy, beneath its deceptive simplicity lie some 
-                    powerful language features. JavaScript is now used by an incredible number of high-profile applications, showing that deeper knowledge of this technology is an important skill for any web or mobile developer.</p>
-                    </section>
-                    <section>
-                        <h2>JavaScript is..</h2>
+                        <h2>What is JavaScript?</h2>
                         <ul>
                             <li class="fragment">
-                                JavaScript is an object-oriented dynamic language with 
+                                An object-oriented scripting language with 
                                 types and operators, standard built-in objects, and methods.
                             </li>
-                            <li class="fragment">Syntax is based on the Java and C languages — so many structures from those languages apply to JavaScript as well.</li>
-                            <li class="fragment">One main difference is that functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
+                            <li class="fragment">Tool for making dynamic and interactive webpages.                            
+                            </li>
+                            <li class="fragment">Syntax is based on the Java and C languages.</li><br/>
+                            <li class="fragment">One main difference: functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
                             </li>
                         </ul>
                     </section>
@@ -177,23 +172,22 @@
                     <section>
                         <h2>Strings</h2>
                         <div class="left-align">
-                            <p class="">Sequences of characters. <br/>More accurately, they are sequences of Unicode characters, with each character represented by a 16-bit number.
-                                <br/>
-                                <br/>
-                                If you want to represent a single character, you just use a string of length 1.
-                                <br/>
-                                To find the length of a string, access its length property:
-                            </p>
+                            <p>Sequences of characters</p>
                             <pre>
-                                <code>"hello".length; // 5</code>
+                                <code>"hello".length; // 5
+"hello world".length; // 11
+"Hello World!".length; // 12</code>
                             </pre>
+                            <p>More accurately, strings are sequences of Unicode characters, with each character represented by a unique numeric value that applies across platforms and programs.</p>
                         </div>
                     </section>
                     <section>
+                    <h3>Strings, cont'd</h3>
                         <div class="left-align">
-                            <p class="">There's our first brush with JavaScript objects! Did we mention that you can use strings like objects too? They have methods as will that allow you to manipulate the string and access information about the string:</p>
-                            <pre class="fragment">
-                                <code>"hello".charAt(0); // "h"<br/>"hello, world".replace("hello", "goodbye"); // "goodbye, world"<br/>"hello".toUpperCase(); // "HELLO"</code>
+                            <p class="">There's our first brush with JavaScript Objects!</p>
+                            <p>Strings have methods just like objects that allow you to manipulate the string and access information about the string:</p>
+                            <pre>
+                                <code>"hello".charAt(0); // "h"<br/>"hello".charAt(4); // "o"<br/>"hello".length; // 5<br/>"hello, world".replace("hello", "goodbye"); // "goodbye, world"<br/>"hello".toUpperCase(); // "HELLO"</code>
                             </pre>
                         </div>
                     </section>
@@ -279,8 +273,18 @@
                 <section>
                     <section>
                         <h2>Control Structures</h2>
-                        <p>JavaScript has a similar set of control structures to other languages in the C family. Conditional statements are supported by if and else; you can chain them together if you like:</p>
-                        <pre class="fragment">
+                        <p>JavaScript has a similar set of control structures to other languages in the C family. 
+                        </p>
+                        <li>If/Else</li>
+                        <li>While Loop</li>
+                        <li>Do-While Loop</li>
+                        <li>For Loop</li>
+                       
+                    </section>
+                    <section>
+                        <h2>If/Else</h2>
+                        <p>Conditional statements are supported by if and else</p>
+                         <pre>
                             <code>var name = "kittens";
 if (name === "puppies") {
 name += "!";
@@ -289,14 +293,18 @@ name += "!";
 } else {
   name = "!" + name;
     }
-//Output: 
-//kittens!!
+console.log(name); 
+
+// Output:
+// kittens!!
                             </code>
                         </pre>
                     </section>
                     <section>
-                        <p>JavaScript has while loops and do-while loops. The first is good for basic looping; the second for loops where you wish to ensure that the body of the loop is executed at least once:</p>
-                        <pre class="fragment">
+                    <h3>While and Do-While Loops</h3>
+                        <p>While Loop: good for basic looping
+                         </p>
+                        <pre>
 <code>while (true) {
   // an infinite loop!
 }
@@ -306,24 +314,32 @@ do {
   input = get_input();
 } while (inputIsNotValid(input))</code>
                         </pre>
+                        <p>Do-While Loop: the body of the loop is executed at least once</p>
                     </section>
                     <section>
-                        <p class="fragment">JavaScript's for loop is the same as that in C and Java: it lets you provide the control information for your loop on a single line.</p>
-                        <pre class="fragment">
+                    <h3>For Loop</h3>
+                        <p>Same as that in C and Java<br/> Lets you provide the control information for your loop on a single line.</p>
+                        <pre>
 <code>for (var i = 0; i < 5; i++) {
-    // Will execute 5 times
+    // Statements will execute 5 times
 }</code>
                     </section>
                     <section>
-                        <p>The &amp;&amp; and || operators use short-circuit logic, which means whether they will execute their second operand is dependent on the first. This is useful for checking for null objects before accessing their attributes:</p>
-                        <pre class="fragment">
-<code>var name = o && o.getName();
+                    <h3>AND/OR</h3>
+                        <p>AND === &amp;&amp;<br/>
+                         OR === ||</p>
+                         <p>Whether the second operand is executed is dependent on the first</p>
+                        <pre>
+<code>// if o exists (resolves to true), then checks if o.getName() is true
+var name = o && o.getName();  
+
 if(o && o.getName()){
   var name = o.getName()
-}</code>
+} 
+</code>
                         </pre>
-                        <p class="fragment">Or for setting default values:</p>
-                        <pre class="fragment"><code>var name = otherName || "default";</code></pre>
+                        <p>Or for setting default values:</p>
+                        <pre><code>var name = otherName || "default";</code></pre>
                     </section>
                     <section>
                         <p class="fragment">JavaScript has a ternary operator for conditional expressions:</p>
