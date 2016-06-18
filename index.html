@@ -61,8 +61,9 @@
                     <h2>What to Expect</h2>
                       
                         <p>General overview of a broad subject, starting from the basics</p>
-                        <p>Lab to practice concepts from today.</p>
-                        <p>Suggested materials to continue learning after today.</p>
+                        <p>Lab to practice some concepts from today</p>
+                        <p>Suggested materials to continue learning after today</p>
+
                         </br>
                         <p>Have fun and ask questions!</p>
                 </section>
@@ -92,6 +93,29 @@
                         <a href="https://dawnmil.github.io/Intro-to-JavaScript-Slides">https://dawnmil.github.io/Intro-to-JavaScript-Slides</a></p>
                         </div>
 
+                </section>
+                <section>
+                    <h2>Today's JavaScript Topics</h2>
+                    <ul>
+                        <li class="fragment">Data Types
+                            <ul>
+                                <li>Numbers</li>
+                                <li>Strings</li>
+                                <li>Objects</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Variables
+                        </li>
+                        <li class="fragment">Operators
+                            <ul>
+                                <li>Addition, Subtraction, Multiplication, Division</li>
+                                <li>Boolean operators</li>
+                                <li>Modulus operator</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Functions
+                        </li>
+                    </ul>
                 </section>
 
                 <section>
@@ -124,38 +148,16 @@
                     </div>
                 </section>
 
-                <section>
-                    <h2>Today's JavaScript Topics</h2>
-                    <ul>
-                        <li class="fragment">Data Types
-                            <ul>
-                                <li>Numbers</li>
-                                <li>Strings</li>
-                                <li>Objects</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">Variables
-                        </li>
-                        <li class="fragment">Operators
-                            <ul>
-                                <li>Addition, Subtraction, Multiplication, Division</li>
-                                <li>Boolean operators</li>
-                                <li>Modulus operator</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">Functions
-                        </li>
-                    </ul>
-                </section>
+                
                 <section>
                     <section>
                         <h2>What is JavaScript?</h2>
                         <ul>
                             <li class="fragment">
-                                An object-oriented scripting language with 
+                                An object-oriented web-based scripting language with 
                                 types and operators, standard built-in objects, and methods.
                             </li>
-                            <li class="fragment">Tool for making dynamic and interactive webpages.                            
+                                                        
                             </li>
                             <li class="fragment">Syntax is based on the Java and C languages.</li><br/>
                             <li class="fragment">One main difference: functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.
@@ -167,6 +169,63 @@
                         <img src="images/github_languages.jpg" alt="Github Popularity" />
                     </section>
                 </section>
+<section>
+    <section><h2>Numbers</h2>
+    <p>The standard arithmetic operators are supported, including addition, 
+subtraction, modulus (or remainder) arithmetic and so forth.<br/><br/><div class="fragment"> There's 
+also Math, a built-in object that provides advanced mathematical functions and constants:</p>
+<pre><code>Math.sin(3.5);
+var circumference = Math.PI * (r + r);
+</code></pre></div>
+</section>
+
+<section>
+    <h3>Numbers, cont'd</h3>
+    <p>Convert a string to an integer using the built-in parseInt() function</p><pre><code>parseInt("123", 10); // 123</code></pre><br/>
+    <p class="fragment">The second argument, the base, is optional but you should always provide it</p>
+
+</section>
+<section><h3>Numbers, cont'd</h3>
+<p>If you don't provide the base, you can get surprising results in older browsers (pre-2013):</p>
+
+<pre><code>parseInt("010"); // 8</code></pre>
+<p class="fragment">The parseInt() function decided to treat the string as an octal due to leading 0</p>
+</section>
+
+<section>
+<h3>Numbers, cont'd</h3>
+<p>Converting a binary number to an integer:</p>
+<pre><code>parseInt("11", 2); // 3</code></pre>
+<div class="fragment">
+<p>You can also use the unary + operator to convert values to numbers:</p>
+<pre><code>+ "42"; // 42</code></pre></div>
+</section>
+
+<section>
+    <h2>NaN</h2>
+    <p>A special value called NaN (short for "Not a Number") is returned if the string is non-numeric:</p>
+    <pre><code>parseInt("hello", 10); // NaN</code></pre>
+    <div class="fragment">
+    <p>NaN is toxic: if you provide it as an input to any mathematical 
+operation the result will also be NaN:</p>
+<pre><code>NaN + 5; // NaN
+
+isNaN(NaN); // true,   use built-in function to test for NaN</code></pre></div>
+</section>
+<section>
+    <h3>Infinity</h3>
+    <pre><code>1 / 0; //  Infinity
+-1 / 0; // -Infinity</code></pre>
+<div class="fragment">
+<p>You can test for Infinity, -Infinity and NaN values using the built-in isFinite() function:</p>
+<pre><code>isFinite(1/0); // false
+isFinite(-Infinity); // false
+isFinite(NaN); // false</code></pre></div>
+</section>
+
+
+</section>
+
                 <section>
                     <section>
                         <h2>Strings</h2>
